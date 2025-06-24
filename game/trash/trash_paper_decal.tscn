@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://p3qx1xmi4br8"]
+
+[ext_resource type="Texture2D" uid="uid://dxp52r83krmh4" path="res://trash/trash_paper.png" id="1_fl0sj"]
+
+[node name="TrashPaperDecal" type="Sprite2D"]
+texture = ExtResource("1_fl0sj")

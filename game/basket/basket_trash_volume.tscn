@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://ipvts5f8o5oe"]
+
+[ext_resource type="Texture2D" uid="uid://cyxn6ngey8i2c" path="res://basket/main.png" id="1_navc2"]
+[ext_resource type="Script" path="res://basket/basket_trash_volume.gd" id="2_ijfdy"]
+
+[node name="BucketTrashVolume" type="Sprite2D"]
+texture = ExtResource("1_navc2")
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 275, 275)
+script = ExtResource("2_ijfdy")
+
+[node name="TrashHolder" type="Node2D" parent="."]
+position = Vector2(-138, -137)

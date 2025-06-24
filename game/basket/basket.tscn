@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cusfyigf1wbll"]
+
+[ext_resource type="Texture2D" uid="uid://cyxn6ngey8i2c" path="res://basket/main.png" id="1_ikusm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8runc"]
+size = Vector2(278, 270)
+
+[node name="Basket" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ikusm")
+
+[node name="CatchArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CatchArea"]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_8runc")
