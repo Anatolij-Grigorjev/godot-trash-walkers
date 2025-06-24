@@ -3,15 +3,16 @@ extends Sprite2D
 class_name BasketTrashVolume
 
 @export var trash_decal_scene: PackedScene = preload("res://trash/trash_paper_decal.tscn")
-@export var basket_capacity: int = 20
+@export var basket_capacity: int = 20: set = resize_trash_bits
 @export var num_trash_bits: int = 0: set = manage_trash_bits
 
 @onready var trash_holder: Node2D = $TrashHolder
 @onready var basket_bounds: Vector2 = texture.get_size() * scale
-@onready var trash_target_size: Vector2 = Vector2(
-	basket_bounds.x / 2, 
-	basket_bounds.y / (basket_capacity / 2)
-)
+@onready var trash_target_size: Vector2 = calc_trash_target_size(basket_bounds, basket_capacity)
+
+
+func calc_trash_target_size(basket_bounds: Vector2, basket_capacity: int) -> Vector2:
+	return Vector2(basket_bounds.x / 2, basket_bounds.y / (basket_capacity / 2))
 
 
 func manage_trash_bits(next_amount):
@@ -56,4 +57,12 @@ func add_trash_at_idx(idx: int):
 	var trash_side: int = idx % 2
 	trash_node.position.x += (trash_target_size.x * trash_side)
 	trash_node.owner = get_tree().edited_scene_root
+
+
+func resize_trash_bits(new_capacity: int):
+	basket_capacity = new_capacity
+	trash_target_size = calc_trash_target_size(basket_bounds, new_capacity)
+	var trash_in_bin: int = num_trash_bits
+	manage_trash_bits(0)
+	manage_trash_bits(trash_in_bin)
 	

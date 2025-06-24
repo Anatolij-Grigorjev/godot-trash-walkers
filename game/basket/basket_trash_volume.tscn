@@ -1,10 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://ipvts5f8o5oe"]
 
-[ext_resource type="Texture2D" uid="uid://cyxn6ngey8i2c" path="res://basket/main.png" id="1_navc2"]
+[ext_resource type="Texture2D" uid="uid://bfuba4utmq0cr" path="res://basket/outline.png" id="1_2gg7g"]
 [ext_resource type="Script" path="res://basket/basket_trash_volume.gd" id="2_ijfdy"]
 
 [node name="BucketTrashVolume" type="Sprite2D"]
-texture = ExtResource("1_navc2")
+clip_children = 1
+texture = ExtResource("1_2gg7g")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 275, 275)
 script = ExtResource("2_ijfdy")
 
