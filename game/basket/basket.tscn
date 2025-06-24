@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cusfyigf1wbll"]
+[gd_scene load_steps=4 format=3 uid="uid://cusfyigf1wbll"]
 
 [ext_resource type="Texture2D" uid="uid://cyxn6ngey8i2c" path="res://basket/main.png" id="1_ikusm"]
+[ext_resource type="PackedScene" uid="uid://ipvts5f8o5oe" path="res://basket/basket_trash_volume.tscn" id="2_6vcqg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8runc"]
 size = Vector2(278, 270)
@@ -9,6 +10,9 @@ size = Vector2(278, 270)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_ikusm")
+
+[node name="BucketTrashVolume" parent="Sprite2D" instance=ExtResource("2_6vcqg")]
+show_behind_parent = true
 
 [node name="CatchArea" type="Area2D" parent="."]
 
